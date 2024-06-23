@@ -51,9 +51,9 @@ CUDA_VISIBLE_DEVICES=0 python run.py --datasets commonseqa_gen longbench bbh_gen
 
 > \[!TIP\]
 >
-> The wrapped model file (.py) must be under folder: opencompass/opencompass/models.
+> -- The wrapped model file (.py) must be under folder: opencompass/opencompass/models.
 >
-> The prepared configure file must be under folder: /opencompass/configs
+> -- The prepared configure file must be under folder: /opencompass/configs
 
 
 
