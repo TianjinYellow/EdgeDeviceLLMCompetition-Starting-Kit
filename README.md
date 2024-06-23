@@ -4,13 +4,15 @@ This is the starting kit for the Edge-Device LLM Competition, a NeurIPS 2024 com
 
 ### Submission Requirements
 
-- Model definition file (.py) and its configuration file: **Must be huggingface format**. (https://huggingface.co/docs/transformers/en/custom_models)
+- The wrapped model definition file (.py) and its configuration file which required by Opencompass evaluation.(https://opencompass.readthedocs.io/en/latest/advanced_guides/new_model.html) 
 
 - The saved weights: **Must be huggingface format**, i.e., saved via save_pretrained() function that inherated from transformers.PreTrainedModel(https://huggingface.co/docs/transformers/v4.41.3/en/main_classes/model#transformers.PreTrainedModel)
 
 - The compiled model via MLC-MiniCPM tool. (https://github.com/OpenBMB/mlc-MiniCPM)
 
 - The evaluated results including sores for CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, TruthfulQA, Throughput and Memory Usage.
+
+- Source code of your method as well as a usage instruction.
 
 ### Evalution for CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, TruthfulQA Tasks
 
@@ -102,11 +104,17 @@ cd -
 
 ### Submissions
 
-- The shared link for the saved model in huggingface format and the compiled model via MLC-MiniCPM. (Make Sure that the saved model and compiled model can be downloaded via this shared link)
+Please upload all the required materials to a GitHub repository and submit the repository link to us. The repository should contain:
 
-- The model definition file (.py) and its configur file. 
+- A folder: For the saved model in huggingface format 
 
-- The evaluated results containing scores of CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, TruthfulQA , Throughput and GPU memory usage. (.csv). Please generate CSV file via Generate_CSV.py
+- A folder: For the compiled model via MLC-MiniCPM. (Make Sure that the saved model and compiled model can be downloaded via this shared link)
+
+- A folder: For the source code of your method as well as a readme for usage explanation.
+
+- The (wrapped) model definition file (.py) and its configuration file which required by opencompass evaluation. 
+
+- A CSV file: For the evaluated results. It should contain scores of CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, TruthfulQA , Throughput and GPU memory usage. (.csv). Please generate CSV file via Generate_CSV.py
 
 <span style="color:red"><strong>Please join us on Discord for discussions and up-to-date announcements:</strong></span>
 
