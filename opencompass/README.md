@@ -22,6 +22,7 @@ The evaluation for CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, C
   conda create --name opencompass python=3.10 
   conda activate opencompass
   conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+  Pip install Faiss-gpu
   cd opencompass && pip install -e .
   cd opencompass/human-eval && pip install -e .
 ```
