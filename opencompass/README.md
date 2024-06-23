@@ -59,7 +59,7 @@ CUDA_VISIBLE_DEVICES=0 python run.py --datasets commonseqa_gen longbench bbh_gen
 
 
 
-### Evalution for Memeory Usage+Throughput
+### Evalution for GPU Memeory Usage+Throughput
 
 ```bash
 # Replace the model/tokenizer loader code with your own code. DO NOT CHANGE THE HYPER-PARAMETER SETTING.
@@ -107,3 +107,7 @@ cd -
 - The model definition file (.py) and its configur file. 
 
 - The evaluated results containing scores of CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, TruthfulQA , Throughput and GPU memory usage. (.csv). Please generate CSV file via Generate_CSV.py
+
+<span style="color:red"><strong>Please join us on Discord for discussions and up-to-date announcements:</strong></span>
+
+[https://discord.gg/SsyY2s2k](https://discord.gg/SsyY2s2k)

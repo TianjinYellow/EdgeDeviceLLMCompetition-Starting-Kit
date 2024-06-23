@@ -59,7 +59,7 @@ CUDA_VISIBLE_DEVICES=0 python run.py --datasets commonseqa_gen longbench bbh_gen
 
 
 
-### Evalution for Memeory Usage+Throughput
+### Evalution for GPU Memeory Usage+Throughput
 
 ```bash
 # Replace the model/tokenizer loader code with your own code. DO NOT CHANGE THE HYPER-PARAMETER SETTING.
