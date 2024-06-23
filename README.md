@@ -1,4 +1,4 @@
-## Starting Kit for Edge-Device LLM Competition 2024 
+<h2 align="center">Starting Kit for Edge-Device LLM Competition, NeurIPS 2024</h2>
 
 This is the starting kit for the Edge-Device LLM Competition, a NeurIPS 2024 competition. To learn more about the competition, please see the [competition website](https://edge-llms-challenge.github.io/edge-llm-challenge.github.io/).  This starting kit provides instructions on downloading data, running evaluations, and generating submissions.
 
@@ -16,7 +16,7 @@ This is the starting kit for the Edge-Device LLM Competition, a NeurIPS 2024 com
 
 The evaluation for CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, and TruthfulQA tasks is conducted using the Opencompass tool.
 
-- Environment Setup
+**Environment Setup**
 
 ```bash
   conda create --name opencompass python=3.10 
@@ -27,7 +27,7 @@ The evaluation for CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, C
   cd opencompass/human-eval && pip install -e .
 ```
 
-- Data Preparation
+**Data Preparation**
 
 ```bash
 # Download dataset to data/ folder
@@ -35,13 +35,14 @@ wget https://github.com/open-compass/opencompass/releases/download/0.2.2.rc1/Ope
 unzip OpenCompassData-core-20240207.zip
 ```
 
-- Evaluation Huggingface models.
+**Evaluation Huggingface models**
 
 ```bash 
 CUDA_VISIBLE_DEVICES=0 python run.py --datasets commonseqa_gen longbench bbh_gen gsm8k_gen humaneval_gen FewCLUE_chid_gen truthfulqa_gen --hf-num-gpus 1 --hf-type base --hf-path meta-llama/Meta-Llama-3-8B --debug --model-kwargs device_map='auto' trust_remote_code=True
 ## --dataset: specify datasets
 ```
-- Evaluate local own models.
+**Evaluate local own models**
+
   - Our own model must be wraped to opencompass format. An example can be found in opencompass/opencompass/models/custom_llama.py Refer to (https://opencompass.readthedocs.io/en/latest/advanced_guides/new_model.html).
   - Prepare the corresponding configure file. An example can  be found in opencompass/configs/example/example.py 
 
