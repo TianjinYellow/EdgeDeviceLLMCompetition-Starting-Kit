@@ -14,7 +14,7 @@ This is the starting kit for the Edge-Device LLM Competition, a NeurIPS 2024 com
 
 ## Evalution for CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, TruthfulQA Tasks
 
-Evaluation for CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, TruthfulQA Tasks is based on Opencompass tool. 
+The evaluation for CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, and TruthfulQA tasks is conducted using the Opencompass tool.
 
 - Environment Setup
 
@@ -44,30 +44,33 @@ CUDA_VISIBLE_DEVICES=0 python run.py --datasets commonseqa_gen longbench bbh_gen
   - Our own model must be wraped to opencompass format. An example can be found in opencompass/opencompass/models/custom_llama.py Refer to (https://opencompass.readthedocs.io/en/latest/advanced_guides/new_model.html).
   - Prepare the corresponding configure file. An example can  be found in opencompass/configs/example/example.py 
 
-> \[!TIP\]
->
-> The wrapped model file (.py) must be under folder: opencompass/opencompass/models.
-> The prepared configure file must be under folder: /opencompass/configs
-
 ```bash
 CUDA_VISIBLE_DEVICES=0 python run.py --datasets commonseqa_gen longbench bbh_gen gsm8k_gen humaneval_gen FewCLUE_chid_gen truthfulqa_gen --hf-num-gpus 1 --hf-type base --models example --debug --model-kwargs device_map='auto' trust_remote_code=True
 # --models: specify the local model
 ```
 
-## Evalution for Memeory usage+Throughput
+> \[!TIP\]
+>
+> The wrapped model file (.py) must be under folder: opencompass/opencompass/models.
+> The prepared configure file must be under folder: /opencompass/configs
+
+
+
+## Evalution for Memeory Usage+Throughput
 
 ```bash
 # Replace the model/tokenizer loader code with your own code. DO NOT CHANGE THE HYPER-PARAMETER SETTING.
 python EvaluateThroughputAndMemory.py --model_name MODEL_NAME
 ```
 
-## Compile model via MLC-MiniCPM. Refer to (https://github.com/OpenBMB/mlc-MiniCPM)
+## Compile model via MLC-MiniCPM. 
+Refer to (https://github.com/OpenBMB/mlc-MiniCPM)
 
 - Prepare Enviroment
 
 Follow https://llm.mlc.ai/docs/deploy/android.html to prepare requirements.
 
-For the **Compile PyTorch Models from HuggingFace** session, use our github repo and conduct the following instructions to install our modified version of mlc_chat.
+For the **Compile PyTorch Models from HuggingFace**,  conduct the following instructions to install mlc_chat.
 
 ```bash
 mkdir -p build && cd build
