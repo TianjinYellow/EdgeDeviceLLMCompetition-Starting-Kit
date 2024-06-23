@@ -46,16 +46,14 @@ def get_gpu_memory_usage():
     gpu_memory = int(result.strip().split('\n')[0])
     return gpu_memory
 
-# Function to perform inference
 def model_inference(model, inputs):
     with torch.no_grad():
         outputs = model(**inputs)
 
-# Select a batch of data
 sample_batch = encoded_dataset.select(range(args.batch_size))
 inputs = {key: torch.tensor(val).cuda() for key, val in sample_batch.to_dict().items() if key in tokenizer.model_input_names}
 
-# Initialize lists to store memory usage and inference time
+
 memory_usages = []
 inference_times = []
 
@@ -63,18 +61,15 @@ inference_times = []
 for _ in range(args.num_repeats):
     torch.cuda.empty_cache()  # Clear the cache to get more accurate measurements
     
-    # Measure inference time
+
     start_time = time.time()
     model_inference(model, inputs)
     end_time = time.time()
-    
-    # Measure GPU memory usage after inference
+
     gpu_memory = get_gpu_memory_usage()
 
-    # Calculate inference time
     inference_time = end_time - start_time
 
-    # Store the results
     memory_usages.append(gpu_memory)
     inference_times.append(inference_time)
 
