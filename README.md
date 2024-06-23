@@ -2,7 +2,7 @@
 
 This is the starting kit for the Edge-Device LLM Competition, a NeurIPS 2024 competition. To learn more about the competition, please see the [competition website](https://edge-llms-challenge.github.io/edge-llm-challenge.github.io/).  This starting kit provides instructions on downloading data, running evaluations, and generating submissions.
 
-## Submission Requirements
+### Submission Requirements
 
 - Model definition file (.py) and its configuration file: Must be huggingface format. (https://huggingface.co/docs/transformers/en/custom_models)
 
@@ -12,7 +12,7 @@ This is the starting kit for the Edge-Device LLM Competition, a NeurIPS 2024 com
 
 - The evaluated results including sores for CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, TruthfulQA + Throughput+Memory Usage
 
-## Evalution for CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, TruthfulQA Tasks
+### Evalution for CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, TruthfulQA Tasks
 
 The evaluation for CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, and TruthfulQA tasks is conducted using the Opencompass tool.
 
@@ -56,14 +56,14 @@ CUDA_VISIBLE_DEVICES=0 python run.py --datasets commonseqa_gen longbench bbh_gen
 
 
 
-## Evalution for Memeory Usage+Throughput
+### Evalution for Memeory Usage+Throughput
 
 ```bash
 # Replace the model/tokenizer loader code with your own code. DO NOT CHANGE THE HYPER-PARAMETER SETTING.
 python EvaluateThroughputAndMemory.py --model_name MODEL_NAME
 ```
 
-## Compile model via MLC-MiniCPM. 
+### Compile model via MLC-MiniCPM. 
 Refer to (https://github.com/OpenBMB/mlc-MiniCPM)
 
 - Prepare Enviroment
@@ -97,7 +97,7 @@ cd ./android/library
 cd -
 ```
 
-## Submissions
+### Submissions
 
 - The shared link for the saved model in huggingface format and the compiled model via MLC-MiniCPM. (Make Sure that the saved model and compiled model can be downloaded via this shared link)
 
