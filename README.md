@@ -68,7 +68,7 @@ python EvaluateThroughputAndMemory.py --model_name MODEL_NAME
 ### Compile model via MLC-MiniCPM. 
 Refer to (https://github.com/OpenBMB/mlc-MiniCPM)
 
-- Prepare Enviroment
+**Prepare Enviroment**
 
 Follow https://llm.mlc.ai/docs/deploy/android.html to prepare requirements.
 
@@ -84,7 +84,7 @@ cd build && cmake .. && cmake --build . --parallel $(nproc) && cd ..
 cd python && pip install -e . && cd ..
 ```
 
-- Compile Model
+**Compile Model**
 
 put huggingface downloaded model checkpoint into `dist/models`.
 
