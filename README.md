@@ -66,7 +66,7 @@ CUDA_VISIBLE_DEVICES=0 python run.py --datasets commonseqa_gen longbench bbh_gen
 python EvaluateThroughputAndMemory.py --model_name MODEL_NAME
 ```
 
-### Compile model via MLC-MiniCPM. 
+### Compile model via MLC-MiniCPM
 Refer to (https://github.com/OpenBMB/mlc-MiniCPM)
 
 **Prepare Enviroment**
