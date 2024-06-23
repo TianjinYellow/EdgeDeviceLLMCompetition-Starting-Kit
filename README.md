@@ -116,6 +116,8 @@ Please upload all the required materials to a GitHub repository and submit the r
 
 - A CSV file: For the evaluated results. It should contain scores of CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, TruthfulQA , Throughput and GPU memory usage. (.csv). Please generate CSV file via Generate_CSV.py
 
+**An example of submission format can be found in Submission_Example folder**
+
 <span style="color:red"><strong>Please join us on Discord for discussions and up-to-date announcements:</strong></span>
 
 [https://discord.gg/SsyY2s2k](https://discord.gg/SsyY2s2k)
