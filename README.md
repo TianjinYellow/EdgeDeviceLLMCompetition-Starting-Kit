@@ -109,6 +109,6 @@ cd -
 - The evaluated results containing scores of CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, TruthfulQA , Throughput and GPU memory usage. (.csv). Please generate CSV file via Generate_CSV.py
 
 
-**<span style="color:red">Please join us on Discord for discussions and up-to-date announcements:</span>**
+<span style="color:red">**Please join us on Discord for discussions and up-to-date announcements:**</span>
 
 [https://discord.gg/SsyY2s2k](https://discord.gg/SsyY2s2k)
