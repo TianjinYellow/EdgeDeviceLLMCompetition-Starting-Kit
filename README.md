@@ -6,9 +6,9 @@ This is the starting kit for the Edge-Device LLM Competition, a NeurIPS 2024 com
 
 [https://discord.gg/SsyY2s2k](https://discord.gg/SsyY2s2k)
 
-### Evalution for CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, TruthfulQA Tasks
+### Open Evaluation Task
 
-The evaluation for CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, and TruthfulQA tasks is conducted using the Opencompass tool.
+The evaluation of CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, and TruthfulQA is conducted using the Opencompass tool.
 
 **Environment Setup**
 
@@ -47,9 +47,9 @@ CUDA_VISIBLE_DEVICES=0 python run.py --datasets commonseqa_gen longbench bbh_gen
 
 > \[!TIP\]
 >
-> -- The wrapped model file (.py) must be under folder: opencompass/opencompass/models.
+> -- The wrapped model file (.py) must be under the folder: opencompass/opencompass/models.
 >
-> -- The prepared configure file must be under folder: /opencompass/configs
+> -- The prepared configure file must be under the folder: /opencompass/configs
 
 
 
@@ -61,9 +61,9 @@ python EvaluateThroughputAndMemory.py --model_name MODEL_NAME
 ```
 
 ### Compile model via MLC-MiniCPM
-Refer to (https://github.com/OpenBMB/mlc-MiniCPM)
+Refer to https://github.com/OpenBMB/mlc-MiniCPM
 
-**Prepare Enviroment**
+**Prepare Environment**
 
 Follow https://llm.mlc.ai/docs/deploy/android.html to prepare requirements.
 
