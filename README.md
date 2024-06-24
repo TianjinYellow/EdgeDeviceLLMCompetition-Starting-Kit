@@ -112,7 +112,7 @@ Please upload all the required materials to a GitHub repository and submit the r
 
 - The (wrapped) model definition file (.py) and its configuration file which are required by opencompass for evaluating your local model. 
 
-- A CSV file: For the evaluated results. It should contain scores of CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, TruthfulQA, Throughput, and GPU memory usage. (.csv). Please generate CSV file via Generate_CSV.py
+- A CSV file: All participating teams are required to evaluate their models locally first and submit the results using a .CSV file. It should contain scores of CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, TruthfulQA, Throughput, and GPU memory usage. Please generate .CSV file via Generate_CSV.py
 
 **An example of submission format can be found in Submission_Example folder**
 
