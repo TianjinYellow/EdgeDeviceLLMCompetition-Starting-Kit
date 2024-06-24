@@ -53,16 +53,16 @@ CUDA_VISIBLE_DEVICES=0 python run.py --datasets commonseqa_gen longbench bbh_gen
 
 > \[!TIP\]
 >
-> -- The wrapped model file (.py) must be under the folder: opencompass/opencompass/models.
+> -- The wrapped model file (.py) should be placed in the directory: opencompass/opencompass/models.
 >
-> -- The prepared configure file must be under the folder: /opencompass/configs
+> -- The prepared configure file should be placed in the directory: /opencompass/configs
 
 
 
 ### GPU Memory Usage and Throughput Measurement
 
 ```bash
-# Replace the model/tokenizer loader code with your own code. DO NOT CHANGE THE HYPER-PARAMETER SETTING.
+# Replace the model/tokenizer loader code with your code. DO NOT CHANGE THE HYPER-PARAMETER SETTING.
 python EvaluateThroughputAndMemory.py --model_name MODEL_NAME
 ```
 
@@ -104,15 +104,15 @@ cd -
 
 Please upload all the required materials to a GitHub repository and submit the repository link to us via the submission form (https://forms.gle/S367FfxUDcjSKz1Q9). The repository should contain:
 
-- A .txt file: It contains a shared link for downloading e saved model in huggingface format.(Make Sure that the saved model can be downloaded via this shared link) 
+- A .txt file: It contains a shared link for downloading your model checkpoints in the huggingface format (make sure that the saved model can be downloaded via this shared link).
 
-- A .txt file: It contains a shared link for downloading the compiled model (compiled by MLC-MiniCPM). (Make Sure that the  compiled model can be downloaded via this shared link)
+- A .txt file: It contains a shared link for downloading the compiled model (compiled by MLC-MiniCPM) (make sure that the compiled model can be downloaded via this shared link).
 
 - A folder: For the runnable source code of your method as well as a readme for usage explanation.
 
-- The (wrapped) model definition file (.py) and its configuration file which required by opencompass  for evaluating local model. 
+- The (wrapped) model definition file (.py) and its configuration file which are required by opencompass for evaluating your local model. 
 
-- A CSV file: For the evaluated results. It should contain scores of CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, TruthfulQA , Throughput and GPU memory usage. (.csv). Please generate CSV file via Generate_CSV.py
+- A CSV file: For the evaluated results. It should contain scores of CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, TruthfulQA, Throughput, and GPU memory usage. (.csv). Please generate CSV file via Generate_CSV.py
 
 **An example of submission format can be found in Submission_Example folder**
 
