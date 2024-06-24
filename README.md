@@ -10,7 +10,7 @@ This is the starting kit for the Edge-Device LLM Competition, a NeurIPS 2024 com
 
 The evaluation of CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, and TruthfulQA is conducted using the Opencompass tool.
 
-**Environment Setup**
+**Environment setup**
 
 ```bash
   conda create --name opencompass python=3.10 
@@ -21,7 +21,13 @@ The evaluation of CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CH
   cd opencompass/human-eval && pip install -e .
 ```
 
-**Data Preparation**
+**Pre-trained model preparation for track-1**
+
+- [Phi-2](https://huggingface.co/microsoft/phi-2)
+- [Llama3-8B](https://huggingface.co/meta-llama/Meta-Llama-3-8B)
+- [Qwen-7B](https://huggingface.co/Qwen/Qwen2-7B)
+
+**Data preparation**
 
 ```bash
 # Download dataset to data/ folder
@@ -35,9 +41,9 @@ unzip OpenCompassData-core-20240207.zip
 CUDA_VISIBLE_DEVICES=0 python run.py --datasets commonseqa_gen longbench bbh_gen gsm8k_gen humaneval_gen FewCLUE_chid_gen truthfulqa_gen --hf-num-gpus 1 --hf-type base --hf-path meta-llama/Meta-Llama-3-8B --debug --model-kwargs device_map='auto' trust_remote_code=True
 ## --dataset: specify datasets
 ```
-**Evaluate local own models**
+**Evaluate local models**
 
-  - Our own model must be wraped to opencompass format. An example can be found in opencompass/opencompass/models/custom_llama.py Refer to (https://opencompass.readthedocs.io/en/latest/advanced_guides/new_model.html).
+  - Your local model must be wrapped in the opencompass format. An example can be found in opencompass/opencompass/models/custom_llama.py Refer to (https://opencompass.readthedocs.io/en/latest/advanced_guides/new_model.html).
   - Prepare the corresponding configure file. An example can  be found in opencompass/configs/example/example.py 
 
 ```bash
@@ -53,14 +59,14 @@ CUDA_VISIBLE_DEVICES=0 python run.py --datasets commonseqa_gen longbench bbh_gen
 
 
 
-### Evalution for GPU Memeory Usage+Throughput
+### GPU Memory Usage and Throughput Measurement
 
 ```bash
 # Replace the model/tokenizer loader code with your own code. DO NOT CHANGE THE HYPER-PARAMETER SETTING.
 python EvaluateThroughputAndMemory.py --model_name MODEL_NAME
 ```
 
-### Compile model via MLC-MiniCPM
+### Compile Model via MLC-MiniCPM
 Refer to https://github.com/OpenBMB/mlc-MiniCPM
 
 **Prepare Environment**
