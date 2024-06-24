@@ -2,17 +2,9 @@
 
 This is the starting kit for the Edge-Device LLM Competition, a NeurIPS 2024 competition. To learn more about the competition, please see the [competition website](https://edge-llms-challenge.github.io/edge-llm-challenge.github.io/).  This starting kit provides instructions on downloading data, running evaluations, and generating submissions.
 
-### Submission Requirements
+<span style="color:red"><strong>Please join us on Discord for discussions and up-to-date announcements:</strong></span>
 
-- The wrapped model definition file (.py) and its configuration file which required by Opencompass evaluation.(https://opencompass.readthedocs.io/en/latest/advanced_guides/new_model.html) 
-
-- The saved weights: **Must be huggingface format**, i.e., saved via save_pretrained() function that inherated from transformers.PreTrainedModel(https://huggingface.co/docs/transformers/v4.41.3/en/main_classes/model#transformers.PreTrainedModel)
-
-- The compiled model via MLC-MiniCPM tool. (https://github.com/OpenBMB/mlc-MiniCPM)
-
-- The evaluated results including sores for CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, TruthfulQA, Throughput and Memory Usage.
-
-- Source code of your method as well as a usage instruction.
+[https://discord.gg/SsyY2s2k](https://discord.gg/SsyY2s2k)
 
 ### Evalution for CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, TruthfulQA Tasks
 
@@ -102,22 +94,19 @@ cd ./android/library
 cd -
 ```
 
-### Submissions
+### Submissions Requirements:
 
-Please upload all the required materials to a GitHub repository and submit the repository link to us. The repository should contain:
+Please upload all the required materials to a GitHub repository and submit the repository link to us via the submission form (https://forms.gle/S367FfxUDcjSKz1Q9). The repository should contain:
 
-- A folder: For the saved model in huggingface format 
+- A .txt file: It contains a shared link for downloading e saved model in huggingface format.(Make Sure that the saved model can be downloaded via this shared link) 
 
-- A folder: For the compiled model via MLC-MiniCPM. (Make Sure that the saved model and compiled model can be downloaded via this shared link)
+- A .txt file: It contains a shared link for downloading the compiled model (compiled by MLC-MiniCPM). (Make Sure that the  compiled model can be downloaded via this shared link)
 
-- A folder: For the source code of your method as well as a readme for usage explanation.
+- A folder: For the runnable source code of your method as well as a readme for usage explanation.
 
-- The (wrapped) model definition file (.py) and its configuration file which required by opencompass evaluation. 
+- The (wrapped) model definition file (.py) and its configuration file which required by opencompass  for evaluating local model. 
 
 - A CSV file: For the evaluated results. It should contain scores of CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, TruthfulQA , Throughput and GPU memory usage. (.csv). Please generate CSV file via Generate_CSV.py
 
 **An example of submission format can be found in Submission_Example folder**
 
-<span style="color:red"><strong>Please join us on Discord for discussions and up-to-date announcements:</strong></span>
-
-[https://discord.gg/SsyY2s2k](https://discord.gg/SsyY2s2k)
