@@ -70,7 +70,7 @@ python EvaluateThroughputAndMemory.py --model_name MODEL_NAME
 ```
 
 ### Compile Model via MLC-MiniCPM 
-(DETAILED USAGE INSTRUCTIONS ARE COMING SOON!)
+**(DETAILED USAGE INSTRUCTIONS ARE COMING SOON!)**
 
 Refer to https://github.com/OpenBMB/mlc-MiniCPM
 
