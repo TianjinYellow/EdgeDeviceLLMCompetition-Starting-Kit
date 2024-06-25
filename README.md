@@ -6,11 +6,15 @@ This is the starting kit for the Edge-Device LLM Competition, a NeurIPS 2024 com
 
 [https://discord.gg/SsyY2s2k](https://discord.gg/SsyY2s2k)
 
+<<<<<<< HEAD
 ### Evaluation for CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, TruthfulQA Tasks
+=======
+### Open Evaluation Task
+>>>>>>> e5fbd21e035d18ff7cb6420ec7ed4f5271bd5e0a
 
-The evaluation for CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, and TruthfulQA tasks is conducted using the Opencompass tool.
+The evaluation of CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, and TruthfulQA is conducted using the Opencompass tool.
 
-**Environment Setup**
+**Environment setup**
 
 ```bash
   conda create --name opencompass python=3.10 
@@ -21,13 +25,21 @@ The evaluation for CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, C
   cd opencompass/human-eval && pip install -e .
 ```
 
+<<<<<<< HEAD
 **Pretrained Model Preparation for Track-1**
+=======
+**Pre-trained model preparation for track-1**
+>>>>>>> e5fbd21e035d18ff7cb6420ec7ed4f5271bd5e0a
 
 - [Phi-2](https://huggingface.co/microsoft/phi-2)
 - [Llama3-8B](https://huggingface.co/meta-llama/Meta-Llama-3-8B)
 - [Qwen-7B](https://huggingface.co/Qwen/Qwen2-7B)
 
+<<<<<<< HEAD
 **Data Preparation**
+=======
+**Data preparation**
+>>>>>>> e5fbd21e035d18ff7cb6420ec7ed4f5271bd5e0a
 
 ```bash
 # Download dataset to data/ folder
@@ -41,10 +53,10 @@ unzip OpenCompassData-core-20240207.zip
 CUDA_VISIBLE_DEVICES=0 python run.py --datasets commonseqa_gen longbench bbh_gen gsm8k_gen humaneval_gen FewCLUE_chid_gen truthfulqa_gen --hf-num-gpus 1 --hf-type base --hf-path meta-llama/Meta-Llama-3-8B --debug --model-kwargs device_map='auto' trust_remote_code=True
 ## --dataset: specify datasets
 ```
-**Evaluate local own models**
+**Evaluate local models**
 
-  - Our own model must be wraped to opencompass format. An example can be found in opencompass/opencompass/models/custom_llama.py Refer to (https://opencompass.readthedocs.io/en/latest/advanced_guides/new_model.html).
-  - Prepare the corresponding configure file. An example can  be found in opencompass/configs/example/example.py 
+  - Your local model must be wrapped in the opencompass format. An example can be found in opencompass/opencompass/models/custom_llama.py Refer to (https://opencompass.readthedocs.io/en/latest/advanced_guides/new_model.html).
+  - Prepare the corresponding configuration file. An example can  be found in opencompass/configs/example/example.py NOTE: The path of the saved model weights needs to specified in this configuration file.
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 python run.py --datasets commonseqa_gen longbench bbh_gen gsm8k_gen humaneval_gen FewCLUE_chid_gen truthfulqa_gen --hf-num-gpus 1 --hf-type base --models example --debug --model-kwargs device_map='auto' trust_remote_code=True
@@ -53,23 +65,29 @@ CUDA_VISIBLE_DEVICES=0 python run.py --datasets commonseqa_gen longbench bbh_gen
 
 > \[!TIP\]
 >
-> -- The wrapped model file (.py) must be under folder: opencompass/opencompass/models.
+> -- The wrapped model file (.py) needs to be placed under the folder: opencompass/opencompass/models.
 >
-> -- The prepared configure file must be under folder: /opencompass/configs
+> -- The prepared configuration file needs be placed under the folder: /opencompass/configs.
 
 
 
+<<<<<<< HEAD
 ### Evaluation for GPU Memory Usage+Throughput
+=======
+### GPU Memory Usage and Throughput Measurement
+>>>>>>> e5fbd21e035d18ff7cb6420ec7ed4f5271bd5e0a
 
 ```bash
-# Replace the model/tokenizer loader code with your own code. DO NOT CHANGE THE HYPER-PARAMETER SETTING.
+# Replace the model/tokenizer loader code with your code. DO NOT CHANGE THE HYPER-PARAMETER SETTING.
 python EvaluateThroughputAndMemory.py --model_name MODEL_NAME
 ```
 
-### Compile model via MLC-MiniCPM
-Refer to (https://github.com/OpenBMB/mlc-MiniCPM)
+### Compile Model via MLC-MiniCPM 
+(DETAILED USAGE INSTRUCTIONS ARE COMING SOON!)
 
-**Prepare Enviroment**
+Refer to https://github.com/OpenBMB/mlc-MiniCPM
+
+**Prepare Environment**
 
 Follow https://llm.mlc.ai/docs/deploy/android.html to prepare requirements.
 
@@ -85,7 +103,7 @@ cd build && cmake .. && cmake --build . --parallel $(nproc) && cd ..
 cd python && pip install -e . && cd ..
 ```
 
-**Compile Model**
+**Compile Model** 
 
 put huggingface downloaded model checkpoint into `dist/models`.
 
@@ -104,15 +122,15 @@ cd -
 
 Please upload all the required materials to a GitHub repository and submit the repository link to us via the [submission form](https://forms.gle/S367FfxUDcjSKz1Q9). The repository should contain:
 
-- A .txt file: It contains a shared link for downloading e saved model in huggingface format.(Make Sure that the saved model can be downloaded via this shared link) 
+- A .txt file: It contains a shared link for downloading your model checkpoints in the huggingface format (make sure that the saved model can be downloaded via this shared link).
 
-- A .txt file: It contains a shared link for downloading the compiled model (compiled by MLC-MiniCPM). (Make Sure that the  compiled model can be downloaded via this shared link)
+- A .txt file: It contains a shared link for downloading the compiled model (compiled by MLC-MiniCPM) (make sure that the compiled model can be downloaded via this shared link).
 
-- A folder: For the runnable source code of your method as well as a readme for usage explanation.
+- A folder: Include the runnable source code of your method as well as a readme for usage explanation.
 
-- The (wrapped) model definition file (.py) and its configuration file which required by opencompass  for evaluating local model. 
+- The (wrapped) model definition file (.py) and its configuration file which are required by opencompass for evaluating your local model. 
 
-- A CSV file: For the evaluated results. It should contain scores of CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, TruthfulQA , Throughput and GPU memory usage. (.csv). Please generate CSV file via Generate_CSV.py
+- A CSV file: All participating teams are required to evaluate their models locally first and submit the results using a .CSV file. It should contain scores of CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, TruthfulQA, Throughput, and GPU memory usage. Please generate .CSV file via Generate_CSV.py
 
 **An example of submission format can be found in Submission_Example folder**
 
