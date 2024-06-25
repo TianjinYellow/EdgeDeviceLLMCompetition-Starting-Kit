@@ -44,7 +44,7 @@ CUDA_VISIBLE_DEVICES=0 python run.py --datasets commonseqa_gen longbench bbh_gen
 **Evaluate local models**
 
   - Your local model must be wrapped in the opencompass format. An example can be found in opencompass/opencompass/models/custom_llama.py Refer to (https://opencompass.readthedocs.io/en/latest/advanced_guides/new_model.html).
-  - Prepare the corresponding configure file. An example can  be found in opencompass/configs/example/example.py 
+  - Prepare the corresponding configuration file. An example can  be found in opencompass/configs/example/example.py NOTE: The path of the saved model weights needs to specified in this configuration file.
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 python run.py --datasets commonseqa_gen longbench bbh_gen gsm8k_gen humaneval_gen FewCLUE_chid_gen truthfulqa_gen --hf-num-gpus 1 --hf-type base --models example --debug --model-kwargs device_map='auto' trust_remote_code=True
@@ -55,7 +55,7 @@ CUDA_VISIBLE_DEVICES=0 python run.py --datasets commonseqa_gen longbench bbh_gen
 >
 > -- The wrapped model file (.py) needs to be placed under the folder: opencompass/opencompass/models.
 >
-> -- The prepared configure file needs be placed under the folder: /opencompass/configs.
+> -- The prepared configuration file needs be placed under the folder: /opencompass/configs.
 
 
 
