@@ -53,9 +53,9 @@ CUDA_VISIBLE_DEVICES=0 python run.py --datasets commonseqa_gen longbench bbh_gen
 
 > \[!TIP\]
 >
-> -- The wrapped model file (.py) should be placed in the directory: opencompass/opencompass/models.
+> -- The wrapped model file (.py) needs to be placed under the folder: opencompass/opencompass/models.
 >
-> -- The prepared configure file should be placed in the directory: /opencompass/configs
+> -- The prepared configure file needs be placed under the folder: /opencompass/configs.
 
 
 
@@ -66,7 +66,7 @@ CUDA_VISIBLE_DEVICES=0 python run.py --datasets commonseqa_gen longbench bbh_gen
 python EvaluateThroughputAndMemory.py --model_name MODEL_NAME
 ```
 
-### Compile Model via MLC-MiniCPM
+### Compile Model via MLC-MiniCPM (DETAILED USAGE INSTRUCTIONS ARE COMING SOON!)
 Refer to https://github.com/OpenBMB/mlc-MiniCPM
 
 **Prepare Environment**
@@ -85,7 +85,7 @@ cd build && cmake .. && cmake --build . --parallel $(nproc) && cd ..
 cd python && pip install -e . && cd ..
 ```
 
-**Compile Model** DETAILED USAGE INSTRUCTIONS ARE COMING SOON!
+**Compile Model** 
 
 put huggingface downloaded model checkpoint into `dist/models`.
 
