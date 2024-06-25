@@ -85,7 +85,7 @@ cd build && cmake .. && cmake --build . --parallel $(nproc) && cd ..
 cd python && pip install -e . && cd ..
 ```
 
-**Compile Model**
+**Compile Model** DETAILED USAGE INSTRUCTIONS ARE COMING SOON!
 
 put huggingface downloaded model checkpoint into `dist/models`.
 
@@ -108,7 +108,7 @@ Please upload all the required materials to a GitHub repository and submit the r
 
 - A .txt file: It contains a shared link for downloading the compiled model (compiled by MLC-MiniCPM) (make sure that the compiled model can be downloaded via this shared link).
 
-- A folder: For the runnable source code of your method as well as a readme for usage explanation.
+- A folder: Include the runnable source code of your method as well as a readme for usage explanation.
 
 - The (wrapped) model definition file (.py) and its configuration file which are required by opencompass for evaluating your local model. 
 
