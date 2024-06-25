@@ -6,11 +6,10 @@ This is the starting kit for the Edge-Device LLM Competition, a NeurIPS 2024 com
 
 [https://discord.gg/SsyY2s2k](https://discord.gg/SsyY2s2k)
 
-<<<<<<< HEAD
+
 ### Evaluation for CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, TruthfulQA Tasks
-=======
+
 ### Open Evaluation Task
->>>>>>> e5fbd21e035d18ff7cb6420ec7ed4f5271bd5e0a
 
 The evaluation of CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, and TruthfulQA is conducted using the Opencompass tool.
 
@@ -25,21 +24,14 @@ The evaluation of CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CH
   cd opencompass/human-eval && pip install -e .
 ```
 
-<<<<<<< HEAD
+
 **Pretrained Model Preparation for Track-1**
-=======
-**Pre-trained model preparation for track-1**
->>>>>>> e5fbd21e035d18ff7cb6420ec7ed4f5271bd5e0a
 
 - [Phi-2](https://huggingface.co/microsoft/phi-2)
 - [Llama3-8B](https://huggingface.co/meta-llama/Meta-Llama-3-8B)
 - [Qwen-7B](https://huggingface.co/Qwen/Qwen2-7B)
 
-<<<<<<< HEAD
 **Data Preparation**
-=======
-**Data preparation**
->>>>>>> e5fbd21e035d18ff7cb6420ec7ed4f5271bd5e0a
 
 ```bash
 # Download dataset to data/ folder
@@ -70,12 +62,7 @@ CUDA_VISIBLE_DEVICES=0 python run.py --datasets commonseqa_gen longbench bbh_gen
 > -- The prepared configuration file needs be placed under the folder: /opencompass/configs.
 
 
-
-<<<<<<< HEAD
-### Evaluation for GPU Memory Usage+Throughput
-=======
 ### GPU Memory Usage and Throughput Measurement
->>>>>>> e5fbd21e035d18ff7cb6420ec7ed4f5271bd5e0a
 
 ```bash
 # Replace the model/tokenizer loader code with your code. DO NOT CHANGE THE HYPER-PARAMETER SETTING.
