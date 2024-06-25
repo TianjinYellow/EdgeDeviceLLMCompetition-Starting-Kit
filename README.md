@@ -6,7 +6,7 @@ This is the starting kit for the Edge-Device LLM Competition, a NeurIPS 2024 com
 
 [https://discord.gg/SsyY2s2k](https://discord.gg/SsyY2s2k)
 
-### Evalution for CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, TruthfulQA Tasks
+### Evaluation for CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, TruthfulQA Tasks
 
 The evaluation for CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, and TruthfulQA tasks is conducted using the Opencompass tool.
 
@@ -20,6 +20,12 @@ The evaluation for CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, C
   cd opencompass && pip install -e .
   cd opencompass/human-eval && pip install -e .
 ```
+
+**Pretrained Model Preparation for Track-1**
+
+- [Phi-2](https://huggingface.co/microsoft/phi-2)
+- [Llama3-8B](https://huggingface.co/meta-llama/Meta-Llama-3-8B)
+- [Qwen-7B](https://huggingface.co/Qwen/Qwen2-7B)
 
 **Data Preparation**
 
@@ -53,7 +59,7 @@ CUDA_VISIBLE_DEVICES=0 python run.py --datasets commonseqa_gen longbench bbh_gen
 
 
 
-### Evalution for GPU Memeory Usage+Throughput
+### Evaluation for GPU Memory Usage+Throughput
 
 ```bash
 # Replace the model/tokenizer loader code with your own code. DO NOT CHANGE THE HYPER-PARAMETER SETTING.
@@ -96,7 +102,7 @@ cd -
 
 ### Submissions Requirements:
 
-Please upload all the required materials to a GitHub repository and submit the repository link to us via the submission form (https://forms.gle/S367FfxUDcjSKz1Q9). The repository should contain:
+Please upload all the required materials to a GitHub repository and submit the repository link to us via the [submission form](https://forms.gle/S367FfxUDcjSKz1Q9). The repository should contain:
 
 - A .txt file: It contains a shared link for downloading e saved model in huggingface format.(Make Sure that the saved model can be downloaded via this shared link) 
 

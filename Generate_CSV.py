@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-columns = ['CommonsenseQA', 'BIG-Bench-Hard', 'GSM8K', 'LongBench', 'HumanEval', 'CHID', 'TruthfulQA', 'Throughput', 'Memory-Usage']
+columns = ['CommonsenseQA', 'BIG-Bench-Hard', 'GSM8K', 'LongBench', 'HumanEval', 'CHID', 'crowspairs_gen', 'Throughput', 'Memory-Usage']
 
 # replace 0 with your evaluated results.
 data = {col: [0] for col in columns}

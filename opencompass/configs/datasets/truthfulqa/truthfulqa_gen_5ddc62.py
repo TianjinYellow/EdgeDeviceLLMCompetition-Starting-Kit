@@ -30,7 +30,7 @@ truthfulqa_infer_cfg = dict(
 # variable $OPENAI_API_KEY. Otherwise, set key in here directly.
 truthfulqa_eval_cfg = dict(
     evaluator=dict(
-        type=TruthfulQAEvaluator, metrics=('truth', 'info'), key='ENV'), )
+        type=TruthfulQAEvaluator, metrics=['truth'], key='ENV'), )
 
 truthfulqa_datasets = [
     dict(
