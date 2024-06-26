@@ -1,0 +1,31 @@
+Namespace(config=None, slurm=False, dlc=False, models=None, datasets=['commonseqa_gen', 'longbench', 'bbh_gen', 'gsm8k_gen', 'humaneval_gen', 'FewCLUE_chid_gen', 'crowspairs_gen'], summarizer=None, debug=True, dry_run=False, accelerator=None, mode='all', reuse=None, work_dir=None, config_dir='configs', lark=False, max_num_workers=1, max_workers_per_gpu=1, retry=2, dump_eval_details=False, partition=None, quotatype=None, qos=None, aliyun_cfg='~/.aliyun.cfg', hf_type='base', hf_path='microsoft/phi-2', model_kwargs={'device_map': 'auto', 'trust_remote_code': True}, tokenizer_path=None, tokenizer_kwargs={}, peft_path=None, peft_kwargs={}, generation_kwargs={}, max_seq_len=None, max_out_len=256, min_out_len=1, batch_size=8, num_gpus=None, hf_num_gpus=1, pad_token_id=None, stop_words=[], custom_dataset_path=None, custom_dataset_meta_path=None, custom_dataset_data_type=None, custom_dataset_infer_method=None)
+Traceback (most recent call last):
+  File "/gpfs/home2/huangti/Projects/StartKit/opencompass/run.py", line 15, in <module>
+    main()
+  File "/gpfs/home2/huangti/Projects/StartKit/opencompass/opencompass/cli/main.py", line 221, in main
+    cfg = get_config_from_arg(args)
+  File "/gpfs/home2/huangti/Projects/StartKit/opencompass/opencompass/utils/run.py", line 113, in get_config_from_arg
+    for dataset in match_cfg_file(datasets_dir, [dataset_name]):
+  File "/gpfs/home2/huangti/Projects/StartKit/opencompass/opencompass/utils/run.py", line 55, in match_cfg_file
+    raise ValueError(err_msg)
+ValueError: The provided pattern matches 0 or more than one config. Please verify your pattern and try again. You may use tools/list_configs.py to list or locate the configurations.
++------------------------+
+| Not matched patterns   |
+|------------------------|
+| commonseqa_gen         |
++------------------------+
+
+JOB STATISTICS
+==============
+Job ID: 6744804
+Cluster: snellius
+User/Group: huangti/huangti
+State: RUNNING
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 00:08:42 core-walltime
+Job Wall-clock time: 00:00:29
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 120.00 GB (120.00 GB/node)
+WARNING: Efficiency statistics may be misleading for RUNNING jobs.
