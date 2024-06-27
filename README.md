@@ -19,7 +19,7 @@ The evaluation of CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CH
   conda create --name opencompass python=3.10 
   conda activate opencompass
   conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
-  Pip install Faiss-gpu
+  pip install Faiss-gpu
   cd opencompass && pip install -e .
   cd opencompass/human-eval && pip install -e .
 ```
@@ -42,7 +42,7 @@ unzip OpenCompassData-core-20240207.zip
 **Evaluation Huggingface models**
 
 ```bash 
-CUDA_VISIBLE_DEVICES=0 python run.py --datasets commonseqa_gen longbench bbh_gen gsm8k_gen humaneval_gen FewCLUE_chid_gen truthfulqa_gen --hf-num-gpus 1 --hf-type base --hf-path meta-llama/Meta-Llama-3-8B --debug --model-kwargs device_map='auto' trust_remote_code=True
+CUDA_VISIBLE_DEVICES=0 python run.py --datasets commonsenseqa_gen longbench bbh_gen gsm8k_gen humaneval_gen FewCLUE_chid_gen truthfulqa_gen --hf-num-gpus 1 --hf-type base --hf-path meta-llama/Meta-Llama-3-8B --debug --model-kwargs device_map='auto' trust_remote_code=True
 ## --dataset: specify datasets
 ```
 **Evaluate local models**
@@ -51,7 +51,7 @@ CUDA_VISIBLE_DEVICES=0 python run.py --datasets commonseqa_gen longbench bbh_gen
   - Prepare the corresponding configuration file. An example can  be found in opencompass/configs/example/example.py NOTE: The path of the saved model weights needs to specified in this configuration file.
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 python run.py --datasets commonseqa_gen longbench bbh_gen gsm8k_gen humaneval_gen FewCLUE_chid_gen truthfulqa_gen --hf-num-gpus 1 --hf-type base --models example --debug --model-kwargs device_map='auto' trust_remote_code=True
+CUDA_VISIBLE_DEVICES=0 python run.py --datasets commonsenseqa_gen longbench bbh_gen gsm8k_gen humaneval_gen FewCLUE_chid_gen truthfulqa_gen --hf-num-gpus 1 --hf-type base --models example --debug --model-kwargs device_map='auto' trust_remote_code=True
 # --models: specify the local model
 ```
 
