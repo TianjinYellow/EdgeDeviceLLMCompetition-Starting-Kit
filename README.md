@@ -4,7 +4,7 @@ This is the starting kit for the Edge-Device LLM Competition, a NeurIPS 2024 com
 
 <span style="color:red"><strong>Please join us on Discord for discussions and up-to-date announcements:</strong></span>
 
-[https://discord.gg/ChKFaP9Q](https://discord.gg/ChKFaP9Q)
+[https://discord.gg/ChKFaP9Q](https://discord.gg/yD89SPNr3b)
 
 
 ### Evaluation for CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, TruthfulQA Tasks
