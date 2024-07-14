@@ -68,7 +68,7 @@ CUDA_VISIBLE_DEVICES=0 python run.py --datasets commonsenseqa_gen longbench bbh_
 # Replace the model/tokenizer loader code with your code. DO NOT CHANGE THE HYPER-PARAMETER SETTING.
 python EvaluateThroughputAndMemory.py --model_name MODEL_NAME
 ```
-> \[!TIP\]
+> \[!Note\]
 >
 > -- batch_size needs to be set to 1 and max_len needs to be set o 2K.
 
