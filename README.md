@@ -70,7 +70,7 @@ python EvaluateThroughputAndMemory.py --model_name MODEL_NAME
 ```
 > \[!Note\]
 >
-> -- batch_size needs to be set to 1 and max_length needs to be set o 2K.
+> -- batch_size needs to be set to 1 and max_length needs to be set to 2K.
 
 ### Compile Model via MLC-MiniCPM 
 **A Step by Step instruction are presented in the following document:**
