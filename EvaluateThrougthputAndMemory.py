@@ -15,7 +15,7 @@ import gc
 # Parse command-line arguments
 parser = argparse.ArgumentParser(description="Measure GPU memory and throughput of LLM inference")
 parser.add_argument('--model_name', type=str, default="gpt2", help="Name of the model to use")
-parser.add_argument('--batch_size', type=int, default=8, help="Batch size for inference")
+parser.add_argument('--batch_size', type=int, default=1, help="Batch size for inference")
 parser.add_argument('--num_repeats', type=int, default=500, help="Number of times to repeat the inference for averaging")
 args = parser.parse_args()
 
@@ -33,7 +33,7 @@ dataset = load_dataset("wikipedia", "20220301.en", split="train[:1%]",trust_remo
 
 # Preprocess the dataset
 def preprocess_function(examples):
-    return tokenizer(examples["text"], truncation=True, padding="max_length", max_length=512)
+    return tokenizer(examples["text"], truncation=True, padding="max_length", max_length=2000)
 
 encoded_dataset = dataset.map(preprocess_function, batched=True)
 
