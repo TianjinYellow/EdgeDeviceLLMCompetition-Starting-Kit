@@ -31,7 +31,7 @@ The evaluation of CommonsenseQA, BIG-Bench Hard, GSM8K, HumanEval, CHID, and Tru
   pip install opencompass==0.3.1
 
   # Install human-eval
-
+  pip install git+https://github.com/open-compass/human-eval.git
 ```
 
 
@@ -69,7 +69,7 @@ opencompass --datasets commonsenseqa_7shot_cot_gen_734a22 \
   --model-kwargs device_map='auto' trust_remote_code=True \
   --max-out-len 1024 \
   --debug \ 
-  -r latest
+  -r latest # You can add --dry-run to auto-download the datasets first before your evaluation
 ```
 
 - Evaluate with 8-GPU
