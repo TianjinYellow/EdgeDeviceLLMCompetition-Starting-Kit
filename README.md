@@ -52,7 +52,7 @@ unzip OpenCompassData-core-20240207.zip
 ```
 **Data Preparation(Option-2)**
 
-The OpenCompass will automatically download the used dataset either from its own server or from HuggingFace.
+The OpenCompass will automatically download the datasets either from its own server or from HuggingFace.
 
 **Evaluation Huggingface Models**
 
