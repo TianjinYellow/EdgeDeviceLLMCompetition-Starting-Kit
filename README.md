@@ -11,7 +11,7 @@ This is the starting kit for the Edge-Device LLM Competition, a NeurIPS 2024 com
 
 ### Open Evaluation Task
 
-The evaluation of CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CHID, and TruthfulQA is conducted using the Opencompass tool.
+The evaluation of CommonsenseQA, BIG-Bench Hard, GSM8K, HumanEval, CHID, and TruthfulQA is conducted using the Opencompass tool.
 
 **Environment setup**
 
@@ -19,41 +19,93 @@ The evaluation of CommonsenseQA, BIG-Bench Hard, GSM8K, LongBench, HumanEval, CH
   conda create --name opencompass python=3.10 
   conda activate opencompass
   conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
-  pip install Faiss-gpu
-  cd opencompass && pip install -e .
-  cd opencompass/human-eval && pip install -e .
+  pip install faiss-gpu
+
+  # Install from source 
+  git clone https://github.com/open-compass/opencompass opencompass
+  cd opencompass
+  git checkout v0.3.1 v0.3.1
+  pip install -e .
+
+  # or with pip 
+  pip install opencompass==0.3.1
+
+  # Install human-eval
+  
 ```
 
 
 **Pretrained Model Preparation for Track-1**
 
 - [Phi-2](https://huggingface.co/microsoft/phi-2)
-- [Llama3-8B](https://huggingface.co/meta-llama/Meta-Llama-3-8B)
+- [Llama-3.1-8B-Instruct](https://huggingface.co/meta-llama/Meta-Llama-3.1-8B-Instruct)
 - [Qwen-7B](https://huggingface.co/Qwen/Qwen2-7B)
 
-**Data Preparation**
+**Data Preparation(Option-1)**
+
+If your environment cannot access the Internet, you can manually download the dataset.
 
 ```bash
 # Download dataset to data/ folder
 wget https://github.com/open-compass/opencompass/releases/download/0.2.2.rc1/OpenCompassData-core-20240207.zip
 unzip OpenCompassData-core-20240207.zip
 ```
+**Data Preparation(Option-2)**
 
-**Evaluation Huggingface models**
+The OpenCompass will automatically download the used dataset either from its own server or from HuggingFace.
+
+**Evaluation Huggingface Models**
+
+- Evaluate with 1-GPU
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 python run.py --datasets commonsenseqa_gen longbench bbh_gen gsm8k_gen humaneval_gen FewCLUE_chid_gen truthfulqa_gen --hf-num-gpus 1 --hf-type base --hf-path microsoft/phi-2 --debug --model-kwargs device_map='auto' trust_remote_code=True
-## --dataset: specify datasets
+CUDA_VISIBLE_DEVICES=0 \
+opencompass --datasets commonsenseqa_7shot_cot_gen_734a22 \ 
+  FewCLUE_chid_gen \ 
+  humaneval_gen \
+  bbh_gen gsm8k_gen \ 
+  --hf-type chat \
+  --hf-path meta-llama/Meta-Llama-3.1-8B-Instruct \
+  --model-kwargs device_map='auto' trust_remote_code=True \
+  --max-out-len 1024 \
+  --debug \ 
+  -r latest
 ```
+
+- Evaluate with 8-GPU
+
+```bash
+opencompass --datasets commonsenseqa_7shot_cot_gen_734a22 \
+  FewCLUE_chid_gen \
+  humaneval_gen \
+  bbh_gen \
+  gsm8k_gen \
+  --hf-type chat \
+  --hf-path meta-llama/Meta-Llama-3.1-8B-Instruct \
+  --model-kwargs device_map='auto' trust_remote_code=True \
+  --max-num-workers 8 \
+  --max-out-len 1024 \
+  -r latest
+```
+**Reference Performance** 
+
+
+```bash
+dataset                                      version    metric            mode      Meta-Llama-3.1-8B-Instruct_hf
+-------------------------------------------  ---------  ----------------  ------  -------------------------------
+commonsense_qa                               734a22     accuracy          gen                               72.89
+chid-test                                    211ee7     accuracy          gen                               69.43
+openai_humaneval                             8e312c     humaneval_pass@1  gen                               68.29
+gsm8k                                        1d7fe4     accuracy          gen                               84.38
+truthful_qa                                  5ddc62     bleu_acc          gen                                0.28
+bbh                                          -          naive_average     gen                               67.92
+```
+
 **Evaluate local models**
 
   - Your local model must be wrapped in the opencompass format. An example can be found in opencompass/opencompass/models/custom_llama.py Refer to (https://opencompass.readthedocs.io/en/latest/advanced_guides/new_model.html).
   - Prepare the corresponding configuration file. An example can  be found in opencompass/configs/example/example.py NOTE: The path of the saved model weights needs to specified in this configuration file.
 
-```bash
-CUDA_VISIBLE_DEVICES=0 python run.py --datasets commonsenseqa_gen longbench bbh_gen gsm8k_gen humaneval_gen FewCLUE_chid_gen truthfulqa_gen --hf-num-gpus 1 --hf-type base --models example --debug --model-kwargs device_map='auto' trust_remote_code=True
-# --models: specify the local model
-```
 
 > \[!TIP\]
 >
