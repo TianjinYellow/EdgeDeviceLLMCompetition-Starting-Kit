@@ -11,7 +11,7 @@ This is the starting kit for the Edge-Device LLM Competition, a NeurIPS 2024 com
 
 ### Open Evaluation Task
 
-The evaluation of CommonsenseQA, BIG-Bench Hard, GSM8K, HumanEval, CHID, and TruthfulQA is conducted using the Opencompass tool.
+The evaluation of CommonsenseQA, BIG-Bench Hard, GSM8K, HumanEval, CHID, and TruthfulQA is conducted using the OpenCompass tool.
 
 **Environment setup**
 
@@ -24,14 +24,14 @@ The evaluation of CommonsenseQA, BIG-Bench Hard, GSM8K, HumanEval, CHID, and Tru
   # Install from source 
   git clone https://github.com/open-compass/opencompass opencompass
   cd opencompass
-  git checkout v0.3.1 v0.3.1
+  git checkout 0.3.1
   pip install -e .
 
   # or with pip 
   pip install opencompass==0.3.1
 
   # Install human-eval
-  
+
 ```
 
 
