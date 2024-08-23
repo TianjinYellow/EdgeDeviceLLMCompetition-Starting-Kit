@@ -39,7 +39,7 @@ The evaluation of CommonsenseQA, BIG-Bench Hard, GSM8K, HumanEval, CHID, and Tru
 
 - [Phi-2](https://huggingface.co/microsoft/phi-2)
 - [Llama-3.1-8B-Instruct](https://huggingface.co/meta-llama/Meta-Llama-3.1-8B-Instruct)
-- [Qwen-7B](https://huggingface.co/Qwen/Qwen2-7B)
+- [Qwen2-7B-Instruct](https://huggingface.co/Qwen/Qwen2-7B-Instruct)
 
 **Data Preparation(Option-1)**
 
