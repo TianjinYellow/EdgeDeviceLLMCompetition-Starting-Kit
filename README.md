@@ -63,13 +63,18 @@ CUDA_VISIBLE_DEVICES=0 \
 opencompass --datasets commonsenseqa_7shot_cot_gen_734a22 \ 
   FewCLUE_chid_gen \ 
   humaneval_gen \
-  bbh_gen gsm8k_gen \ 
+  bbh_gen \
+  gsm8k_gen \ 
+  truthfulqa_gen \
   --hf-type chat \
   --hf-path meta-llama/Meta-Llama-3.1-8B-Instruct \
   --model-kwargs device_map='auto' trust_remote_code=True \
   --max-out-len 1024 \
   --debug \ 
   -r latest # You can add --dry-run to auto-download the datasets first before your evaluation
+  # for Qwen2-7B-Instruct
+  # --hf-path Qwen/Qwen2-7B-Instruct
+
 ```
 
 - Evaluate with 8-GPU
@@ -80,25 +85,28 @@ opencompass --datasets commonsenseqa_7shot_cot_gen_734a22 \
   humaneval_gen \
   bbh_gen \
   gsm8k_gen \
+  truthfulqa_gen \
   --hf-type chat \
   --hf-path meta-llama/Meta-Llama-3.1-8B-Instruct \
   --model-kwargs device_map='auto' trust_remote_code=True \
   --max-num-workers 8 \
   --max-out-len 1024 \
   -r latest
+  # for Qwen2-7B-Instruct
+  # --hf-path Qwen/Qwen2-7B-Instruct
 ```
 **Reference Performance** 
 
 
 ```bash
-dataset                                      version    metric            mode      Meta-Llama-3.1-8B-Instruct_hf
--------------------------------------------  ---------  ----------------  ------  -------------------------------
-commonsense_qa                               734a22     accuracy          gen                               72.89
-chid-test                                    211ee7     accuracy          gen                               69.43
-openai_humaneval                             8e312c     humaneval_pass@1  gen                               68.29
-gsm8k                                        1d7fe4     accuracy          gen                               84.38
-truthful_qa                                  5ddc62     bleu_acc          gen                                0.28
-bbh                                          -          naive_average     gen                               67.92
+dataset                                      version    metric            mode      Meta-Llama-3.1-8B-Instruct_hf    Qwen2-7B-Instruct_hf
+-------------------------------------------  ---------  ----------------  ------  -------------------------------  ----------------------
+commonsense_qa                               734a22     accuracy          gen                               72.89                   33.58
+chid-test                                    211ee7     accuracy          gen                               69.43                   81.72
+openai_humaneval                             8e312c     humaneval_pass@1  gen                               68.29                   78.05
+gsm8k                                        1d7fe4     accuracy          gen                               84.38                   81.12
+truthful_qa                                  5ddc62     bleu_acc          gen                                0.28                    0.23
+bbh                                          -          naive_average     gen                               67.92                   64.09
 ```
 
 **Evaluate local models**
