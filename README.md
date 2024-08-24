@@ -95,6 +95,10 @@ opencompass --datasets commonsenseqa_7shot_cot_gen_734a22 \
   # for Qwen2-7B-Instruct
   # --hf-path Qwen/Qwen2-7B-Instruct
 ```
+> \[!Note\]
+>
+> If there is still an OOM issue when you run it on your server, please set --batch-size to a small value  such as 4 or 2. The default is 8.
+
 **Reference Performance** 
 
 
@@ -136,6 +140,10 @@ python EvaluateThroughputAndMemory.py --model_name MODEL_NAME
 **A Step by Step instruction are presented in the following document:**
 - [Document-English](Step_by_step_instruction_MLC-miniMPC_English.pdf)
 - [Document-Zh](Step-by-Step_Instruction_MLC-LLM_zh.pdf)
+
+> \[!Note\]
+>
+> The download link in Document-Zh has been updated. If the link in Document-English is inaccessible, please use the link provided in Document-Zh.
 
 
 **Prepare Environment** 
