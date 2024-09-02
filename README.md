@@ -195,4 +195,4 @@ Please upload all the required materials to a GitHub repository and submit the r
 
 > \[!Note\]
 >
->For the github collaborator, please add this account **edge-llms-challenge** to your github repo. Make sure we can access this your submission (github repo) using this github account.
+>For the github collaborator, please add this account **"edge-llms-challenge"** to your github repo. Make sure we can access this your submission (github repo) using this github account.
