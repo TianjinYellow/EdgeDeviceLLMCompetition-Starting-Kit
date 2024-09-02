@@ -193,3 +193,6 @@ Please upload all the required materials to a GitHub repository and submit the r
 
 **An example of submission format can be found in Submission_Example folder**
 
+> \[!Note\]
+>
+>For the github collaborator, please add this account **edge-llms-challenge** to your github repo. Make sure we can access this your submission (github repo) using this github account.
