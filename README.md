@@ -179,6 +179,21 @@ cd -
 
 ### Submissions Requirements:
 
+After synchronizing with our evaluation team, thefollowing files must be included in yoursubmission to allow us successfully evaluatingyour models, for both tracks:
+
+- (1) The configuration and checkpoints of theoriginal HuggingFace model (able to run usingPython and Transformer),
+
+- (2) Code for converting the model to MLC(custom code of model network structure in"convert_weight" and "gen_config"),
+
+- (3)Converted MLC model files (model that canrun normally using the official script),
+
+- (4)APK file (APK file successfully compiledaccording to the official tutorial),
+
+- (5)Script to package the MLC model file into theAPK (script that can successfully package themodel onto an Android device and run it, i.e.,.bundle_weight.py).
+
+- (6) lf you successfully run the APK, please take ascreenshot showing the result and upload it to thedesignated folder. lf it doesn't run successfully,you can document the reasons for the failure in anerror.txt TXT and save it in the folder. We will tryto solve it after the submission deadline.
+
+
 Please upload all the required materials to a GitHub repository and submit the repository link to us via the [submission form](https://forms.gle/S367FfxUDcjSKz1Q9). The repository should contain:
 
 - A .txt file: It contains a shared link for downloading your model checkpoints in the huggingface format (make sure that the saved model can be downloaded via this shared link).
